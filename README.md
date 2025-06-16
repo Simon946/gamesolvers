@@ -24,3 +24,18 @@ The `print` function prints the sudoku to standard output. If the string is shor
 ### Compiling & Running
 Compile with: `g++ -o sudoku *.cpp`, run with e.g. `cat input1.txt | ./sudoku`
  
+## towers of hanoi
+The towers of hanoi game has three pegs. A peg can hold a stack of disks, which represents a tower. The goal is to move a tower from one peg to another peg. Only the top disk of a tower can be moved to another tower. A disk can never be placed on top of a smaller disk.
+
+The `hanoi.cpp` file contains all the code. The `recursive` and `iterative` functions both print which disks to move in which order. Their only difference is their algorithm. The `Disk` class is a disk in the tower. It has a size to check that larger disks can never be on top of smaller disks. The `Tower` class represents a tower. It has a name and a peg. The peg is the stack of `Disk`s. 
+
+The `push` function adds a `Disk` to a `Tower`. 
+
+The `move` function moves the top `Disk` from one `Tower` to another without checking if that is allowed. 
+
+The `isLegal` function checks if a move is allowed.
+
+The `moveBidirectional` function attempts to move a `Disk` between two `Tower`s, regardless of which direction the move happens, as long as the move is valid.
+
+### Compiling & Running
+Compile with: `g++ -o hanoi hanoi.cpp`, run with e.g. `echo 3 | ./hanoi`
